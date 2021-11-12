@@ -17,6 +17,7 @@ namespace ShopWebApp.Entities
         public string Title { get; set; }
 
         [Required]
+        [Display(Name = "Thumbnail Image Path")]
         public string ThumbnailImagePath { get; set; }
         [ForeignKey("MediaTypeId")]
         public virtual ICollection<CategoryItem> CategoryItems { get; set; }
