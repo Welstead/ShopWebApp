@@ -11,7 +11,7 @@ namespace ShopWebApp.Entities
     {
         public int Id { get; set; }
         [Required]//Does not allow NULL
-        [StringLength(10, MinimumLength = 2)]
+        [StringLength(200, MinimumLength = 2)]
         public string Title { get; set; }
         public string Description { get; set; }
         [Required]
