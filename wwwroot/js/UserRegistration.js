@@ -41,7 +41,13 @@
                 if (data == true) {
 
                     PresentClosableBootstrapAlert("#alert_placeholder_register", "warning", "Invalid Email", "This email address has already been registered");
-
+                    //var alertHtml = '<div class="alert alert-warning alert-dismissible fade show" role="alert">' +
+                    //    '<strong> Invalid Email</strong> This account already exists' +
+                    //    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                    //    '<span aria-hidden="true">&times;</span>' +
+                    //    '</button>' +
+                    //    '</div>';
+                    //$("#alert_placeholder_restier").html(alertHtml);
                 }
                 else {
                     CloseAlert("#alert_placeholder_register");

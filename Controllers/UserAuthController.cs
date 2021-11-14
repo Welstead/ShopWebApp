@@ -95,10 +95,11 @@ namespace ShopWebApp.Controllers
 
                     return PartialView("_UserRegistrationPartial", registrationModel);
                 }
-                ModelState.AddModelError("", "Registration Attempt Failed");
+                AddErrorsToModelState(result);
             }
             return PartialView("_UserRegistrationPartial", registrationModel);
         } 
+        [AllowAnonymous]
         public async Task<bool> UserNameExists(string userName)
         {
             bool userNameExists = await _context.Users.AnyAsync(u => u.UserName.ToUpper() == userName.ToUpper());
@@ -107,6 +108,11 @@ namespace ShopWebApp.Controllers
                 return true;
 
             return false;
+        }
+        private void AddErrorsToModelState(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+                ModelState.AddModelError(string.Empty, error.Description);
         }
     }
 }
