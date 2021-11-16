@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopWebApp.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShopWebApp.Entities
 {
-    public class Category
+    public class Category:IPrimaryPoperties
     {
         public int Id { get; set; }
         [Required]//Does not allow NULL
